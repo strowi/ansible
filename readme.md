@@ -1,5 +1,7 @@
 # Ansible in a Container
 
+Mirrored from: <https://gitlab.com/strowi/ansible>
+
 Runs ansible-playbook as entrypoint with $@ paramters...
 
 ```bash
