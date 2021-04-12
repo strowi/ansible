@@ -1,4 +1,4 @@
-# Ansible in a Container
+# Ansible in a Container v3.2.0
 
 Mirrored from: <https://gitlab.com/strowi/ansible>
 
