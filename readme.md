@@ -2,13 +2,40 @@
 
 Mirrored from: <https://gitlab.com/strowi/ansible>
 
+## Docker Image
+
+Should be available on docker and gitlab:
+
+* [strowi/ansible:latest](https://hub.docker.com/repository/docker/strowi/ansible)
+* [registry.gitlab.com/strowi/ansible:latest](https://gitlab.com/strowi/ansible)
+
+## Usage
+
+### CLI
+
 Runs ansible-playbook as entrypoint with $@ paramters...
 
 ```bash
 ~> docker run -ti -e PLAYBOOK="play.yml" -e ... registry.gitlab.com/strowi/ansible:latest
 ```
 
-## As Gitlab Job
+### docker-compose
+
+```yaml
+---
+version: '2'
+
+services:
+  ansible:
+    image: registry.gitlab.com/strowi/ansible:latest
+    environment:
+      PLAYBOOK: play.yml
+      INVENTORY:           # default --connection=local
+    volumes:
+      - ./:/src
+```
+
+### Gitlab Pipeline
 
 ```yaml
 ---
@@ -27,27 +54,11 @@ ansible:
     - master
 ```
 
-## As docker-compose compoent
+## Environment Variables
 
-```yaml
----
-version: '2'
+* `REQUIREMENTS`: requirements filename (`/requirements.yml`)
+* `PLAYBOOK`: playbook filename (`playbook.yml`)
+* `INVENTORY`: inventory filename (`/etc/ansible/hosts`)
+* `ANSIBLE_CONFIG`: ansible.cfg filename
 
-services:
-  ansible:
-    image: registry.gitlab.com/strowi/ansible:latest
-    environment:
-      PLAYBOOK: play.yml
-      INVENTORY:           # default --connection=local
-    volumes:
-      - ./:/src
-```
-
-# Environment Variables
-
-- `REQUIREMENTS`: requirements filename (`/requirements.yml`)
-- `PLAYBOOK`: playbook filename (`playbook.yml`)
-- `INVENTORY`: inventory filename (`/etc/ansible/hosts`)
-- `ANSIBLE_CONFIG`: ansible.cfg filename
-
-- `CI_GPG_PRIVATE_KEY`: GPG Private Key used for git-crypt
+* `CI_GPG_PRIVATE_KEY`: GPG Private Key used for git-crypt
