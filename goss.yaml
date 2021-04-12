@@ -1,0 +1,16 @@
+file:
+  /usr/bin/ansible:
+    exists: true
+    mode: "0755"
+    owner: root
+    group: root
+    filetype: file
+package:
+  git:
+    installed: true
+  git-crypt:
+    installed: true
+  gnupg:
+    installed: true
+  openssh-client:
+    installed: true

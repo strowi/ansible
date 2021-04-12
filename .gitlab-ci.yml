@@ -1,0 +1,36 @@
+include:
+  - remote: 'https://gitlab.com/strowi/ci-templates/-/raw/master/build.yml'
+  - remote: 'https://gitlab.com/strowi/ci-templates/-/raw/master/tests.yml'
+
+variables:
+  CODE_QUALITY_DISABLED: "true"
+
+stages:
+  - build
+  - test
+  - release
+
+build:
+  extends: .build
+  stage: build
+  script:
+    - build_image
+
+dgoss:
+  extends: .dgoss
+  script:
+    - dgoss_run -t --entrypoint sh $CI_REGISTRY_IMAGE:${CI_COMMIT_REF_SLUG}-${CI_COMMIT_SHORT_SHA}
+
+container_scanning:
+  extends: .container_scanning
+
+release:
+  extends: .build
+  stage: release
+  script:
+    - release_latest
+    - docker tag "$CI_REGISTRY_IMAGE" "strowi/$CI_PROJECT_NAME"
+    - echo $DOCKER_TOKEN | docker login -u strowi --password-stdin
+    - docker push "strowi/$CI_PROJECT_NAME"
+  only:
+    - master
