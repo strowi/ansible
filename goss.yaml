@@ -12,5 +12,9 @@ package:
     installed: true
   gnupg:
     installed: true
-  openssh-client:
+  openssh-client-common:
+    installed: true
+  openssh-client-default:
+    installed: true
+  openssh-client-keygen:
     installed: true
