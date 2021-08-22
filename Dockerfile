@@ -21,7 +21,7 @@ RUN apk --update --no-cache add \
         cffi \
         pyghmi \
         cryptography==2.8 \
-        ansible==3.2.0 \
+        ansible==4.4.0 \
     && echo "===> Removing package list..." \
     && rm -rf \
         /root/.cache  \
