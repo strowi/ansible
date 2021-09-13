@@ -5,6 +5,13 @@ file:
     owner: root
     group: root
     filetype: file
+  /usr/bin/ssh-keygen:
+    exists: true
+    mode: "0755"
+    owner: root
+    group: root
+    filetype: file
+
 package:
   git:
     installed: true
@@ -12,9 +19,5 @@ package:
     installed: true
   gnupg:
     installed: true
-  openssh-client-common:
-    installed: true
-  openssh-client-default:
-    installed: true
-  openssh-client-keygen:
+  openssh-client:
     installed: true
