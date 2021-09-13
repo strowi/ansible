@@ -1,4 +1,4 @@
-FROM alpine:3.13
+FROM alpine:3.14
 LABEL maintainer="Roman v. Gemmeren <strowi@hasnoname.de>"
 
 RUN apk --update --no-cache add \
