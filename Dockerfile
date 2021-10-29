@@ -1,6 +1,8 @@
 FROM alpine:3.14
 LABEL maintainer="Roman v. Gemmeren <strowi@hasnoname.de>"
 
+# renovate: datasource=pypi depName=ansible versioning=loose
+ENV ANSIBLE_VERSION="4.4.0"
 RUN apk --update --no-cache add \
         sudo \
         openssl \
