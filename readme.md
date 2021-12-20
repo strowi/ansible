@@ -1,4 +1,4 @@
-# Ansible in a Container v4.8.0
+# Ansible in a Container v5.0.1
 
 Mirrored from: <https://gitlab.com/strowi/ansible>
 
