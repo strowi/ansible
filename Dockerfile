@@ -2,7 +2,7 @@ FROM alpine:3.15
 LABEL maintainer="Roman v. Gemmeren <strowi@hasnoname.de>"
 
 # renovate: datasource=pypi depName=ansible versioning=newest
-ENV ANSIBLE_VERSION="5.0.1"
+ENV ANSIBLE_VERSION="5.1.0"
 ENV BUILD_DEPS=" \
   curl \
   python3-dev \
