@@ -3,6 +3,7 @@
   "extends": [
     "local>strowi/ci-templates:global"
   ],
+  "masterIssue": true,
   "regexManagers": [
     {
       "fileMatch": ["^Dockerfile$"],
