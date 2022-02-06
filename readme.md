@@ -1,5 +1,4 @@
-<!-- renovate: datasource=pypi depName=ansible versioning=loose -->
-# Ansible in a Container v5.0.1
+# Ansible in a Container <!-- # renovate: datasource=pypi depName=ansible versioning=loose-->5.3.0
 
 Mirrored from: <https://gitlab.com/strowi/ansible>
 
