@@ -2,17 +2,5 @@
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "extends": [
     "local>strowi/ci-templates:global"
-  ],
-  "masterIssue": true,
-  "regexManagers": [
-    {
-      "description": "Update Version references in Markdown files",
-      "fileMatch": ["\\.md$"],
-      "matchStrings": [
-        " (?<depName>.*?):(?<currentValue>[a-z0-9.-]+)"
-      ],
-      "datasourceTemplate": "pypi",
-      "versioningTemplate": "loose"
-    }
   ]
 }
