@@ -1,4 +1,4 @@
-# Ansible:5.3.0 in a Container
+# Ansible:5.2.0 in a Container
 
 Mirrored from: <https://gitlab.com/strowi/ansible>
 
