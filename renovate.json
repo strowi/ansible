@@ -9,7 +9,7 @@
       "description": "Update Version references in Markdown files",
       "fileMatch": ["\\.md$"],
       "matchStrings": [
-        "(?<depName>.*?):(?<currentValue>[a-z0-9.-]+)"
+        " (?<depName>.*?):(?<currentValue>[a-z0-9.-]+)"
       ],
       "datasourceTemplate": "pypi",
       "versioningTemplate": "loose"
