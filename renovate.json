@@ -6,11 +6,14 @@
   "masterIssue": true,
   "regexManagers": [
     {
-      "fileMatch": ["^Dockerfile$"],
+      "description": "Update Version references in Markdown files",
+      "fileMatch": ["\\.md$"],
       "matchStrings": [
-        "#\\s*renovate:\\s*datasource=(?<datasource>.*?) depName=(?<depName>.*?)( versioning=(?<versioning>.*?))?\\sENV .*?_VERSION=\"(?<currentValue>.*)\"\\s"
+        "(?<depName>ansible):(?<currentValue>[a-z0-9.-]+)(?:@(?<currentDigest>sha256:[a-f0-9]+))?"
       ],
-      "versioningTemplate": "{{#if versioning}}{{{versioning}}}{{else}}semver{{/if}}"
-    }
+      "datasourceTemplate": "pypi",
+      "versioningTemplate": "loose"
+    },
+
   ]
 }
