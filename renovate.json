@@ -13,7 +13,6 @@
       ],
       "datasourceTemplate": "pypi",
       "versioningTemplate": "loose"
-    },
-
+    }
   ]
 }
