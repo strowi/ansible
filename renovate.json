@@ -9,21 +9,10 @@
       "description": "Update Version references in Markdown files",
       "fileMatch": ["\\.md$"],
       "matchStrings": [
-        "(?<depName>ansible):(?<currentValue>[a-z0-9.-]+)"
+        "(?<depName>.*?):(?<currentValue>[a-z0-9.-]+)"
       ],
       "datasourceTemplate": "pypi",
       "versioningTemplate": "loose"
     }
-  ],
-  "packageRules": [
-      {
-      "description": "Update references in Markdown files weekly",
-      "matchPackageNames": ["ansible"],
-      "matchPaths": ["readme.md"],
-      "commitMessageTopic": "references to {{{depName}}}",
-      "semanticCommitType": "docs",
-      "semanticCommitScope": null,
-      "additionalBranchPrefix": "docs-"
-    }
-    ]
+  ]
 }
