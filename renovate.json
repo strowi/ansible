@@ -9,7 +9,7 @@
       "description": "Update Version references in Markdown files",
       "fileMatch": ["\\.md$"],
       "matchStrings": [
-        "(?<depName>ansible):(?<currentValue>[a-z0-9.-]+)(?:@(?<currentDigest>sha256:[a-f0-9]+))?"
+        "(?<depName>ansible):(?<currentValue>[a-z0-9.-]+)"
       ],
       "datasourceTemplate": "pypi",
       "versioningTemplate": "loose"
