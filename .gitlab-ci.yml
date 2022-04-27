@@ -46,8 +46,8 @@ release:
   extends: .build
   stage: release
   script:
-    - release latest
-    - test -n ${CI_COMMIT_TAG} && release ${CI_COMMIT_TAG}
+    - release_latest
+    - test -n ${CI_COMMIT_TAG} && release_tag
     - docker tag "$CI_REGISTRY_IMAGE" "strowi/$CI_PROJECT_NAME"
     - echo $DOCKER_TOKEN | docker login -u strowi --password-stdin
     - docker push "strowi/$CI_PROJECT_NAME"
