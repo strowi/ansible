@@ -38,7 +38,7 @@ release_branch:
     - echo $DOCKER_TOKEN | docker login -u strowi --password-stdin
     - docker push "strowi/ansible:${CI_COMMIT_REF_SLUG}"
   rules:
-    - if: $CI_COMMIT_BRANCH
+    - if: '$CI_COMMIT_BRANCH'
       when: always
     - when: never
 
@@ -51,5 +51,7 @@ release:
     - docker tag "$CI_REGISTRY_IMAGE" "strowi/$CI_PROJECT_NAME"
     - echo $DOCKER_TOKEN | docker login -u strowi --password-stdin
     - docker push "strowi/$CI_PROJECT_NAME"
-  only:
-    - master
+  rules:
+    - if: '$CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH'
+      when: always
+    - when: never
