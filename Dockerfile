@@ -1,4 +1,4 @@
-FROM alpine:3.15
+FROM alpine:3.18
 LABEL maintainer="Roman v. Gemmeren <strowi@hasnoname.de>"
 
 # renovate: datasource=pypi depName=ansible versioning=loose
