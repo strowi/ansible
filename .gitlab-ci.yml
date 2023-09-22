@@ -5,6 +5,9 @@ include:
     file: '/tests.yml'
   - template: Security/Dependency-Scanning.gitlab-ci.yml
   - template: Security/Secret-Detection.gitlab-ci.yml
+  - project: 'strowi/ci-templates'
+    file: 'workflow.yml'
+
 
 variables:
   CODE_QUALITY_DISABLED: "true"
